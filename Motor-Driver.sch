@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -673,7 +673,6 @@
 </classes>
 <parts>
 <part name="Q1" library="Seeed-Transistor-2016" deviceset="SMD-MOSFET-N-CH-20V-2.1A-CJ2302(SOT-23)" device="" value="CJ2302"/>
-<part name="R1" library="Seeed-Resistor-2016" deviceset="SMD-RES-100R-5%-1/10W(0603)" device="" value="100R"/>
 <part name="R2" library="Seeed-Resistor-2016" deviceset="SMD-RES-10K-5%-1/10W(0603)" device="" value="10K 1/10W"/>
 <part name="C1" library="Seeed-Capacitor-2016" deviceset="CERAMIC-1UF-10V-10%-X5R(0402)" device="" value="1uf"/>
 <part name="C4" library="Seeed-Capacitor-2016" deviceset="TANTALUM-SMD-100UF-10V(AVX-B)" device="" value="100uf"/>
@@ -683,14 +682,15 @@
 <part name="M1" library="Andranik-Lab4" deviceset="MOTOR_PADS" device=""/>
 <part name="D1" library="Seeed-Diode-2016" deviceset="SMD-DIODE-SCHOTTKY-20V-500MA(SOD-123)" device="" value="20V-500MA"/>
 <part name="FRAME1" library="frames" deviceset="FRAME_A_L" device=""/>
+<part name="R3" library="Seeed-Resistor-2016" deviceset="SMD-RES-100R-5%-1/10W(0603)" device="" value="100R"/>
 </parts>
 <sheets>
 <sheet>
 <plain>
-<wire x1="127" y1="102.87" x2="127" y2="83.82" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="127" y1="83.82" x2="137.16" y2="83.82" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="123.19" y1="102.87" x2="123.19" y2="83.82" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="123.19" y1="83.82" x2="137.16" y2="83.82" width="0.1524" layer="97" style="shortdash"/>
 <wire x1="137.16" y1="83.82" x2="137.16" y2="102.87" width="0.1524" layer="97" style="shortdash"/>
-<wire x1="137.16" y1="102.87" x2="127" y2="102.87" width="0.1524" layer="97" style="shortdash"/>
+<wire x1="137.16" y1="102.87" x2="123.19" y2="102.87" width="0.1524" layer="97" style="shortdash"/>
 <text x="129.54" y="81.28" size="1.778" layer="97">Filter</text>
 <wire x1="151.13" y1="134.62" x2="162.56" y2="134.62" width="0.1524" layer="97" style="shortdash"/>
 <wire x1="162.56" y1="134.62" x2="162.56" y2="120.65" width="0.1524" layer="97" style="shortdash"/>
@@ -700,17 +700,17 @@
 </plain>
 <instances>
 <instance part="Q1" gate="G$1" x="147.32" y="99.06"/>
-<instance part="R1" gate="G$1" x="134.62" y="99.06"/>
 <instance part="R2" gate="G$1" x="138.43" y="92.71" rot="R90"/>
 <instance part="C1" gate="G$1" x="130.81" y="92.71" rot="R90"/>
 <instance part="C4" gate="G$1" x="125.73" y="125.73" rot="R270"/>
-<instance part="GND1" gate="1" x="121.92" y="83.82"/>
+<instance part="GND1" gate="1" x="119.38" y="83.82"/>
 <instance part="GND2" gate="1" x="125.73" y="118.11"/>
 <instance part="P+1" gate="VCC" x="125.73" y="144.78"/>
 <instance part="M1" gate="G$1" x="139.7" y="125.73"/>
 <instance part="D1" gate="G$1" x="156.21" y="128.27" rot="R90"/>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
 <instance part="FRAME1" gate="G$2" x="172.72" y="0"/>
+<instance part="R3" gate="G$1" x="127" y="99.06"/>
 </instances>
 <busses>
 </busses>
@@ -730,8 +730,8 @@
 <wire x1="130.81" y1="87.63" x2="130.81" y2="88.9" width="0.1524" layer="91"/>
 <junction x="130.81" y="87.63"/>
 <pinref part="GND1" gate="1" pin="GND"/>
-<wire x1="121.92" y1="86.36" x2="121.92" y2="87.63" width="0.1524" layer="91"/>
-<wire x1="121.92" y1="87.63" x2="130.81" y2="87.63" width="0.1524" layer="91"/>
+<wire x1="119.38" y1="86.36" x2="119.38" y2="87.63" width="0.1524" layer="91"/>
+<wire x1="119.38" y1="87.63" x2="130.81" y2="87.63" width="0.1524" layer="91"/>
 <wire x1="130.81" y1="87.63" x2="138.43" y2="87.63" width="0.1524" layer="91"/>
 <wire x1="138.43" y1="88.9" x2="138.43" y2="87.63" width="0.1524" layer="91"/>
 <wire x1="138.43" y1="87.63" x2="147.32" y2="87.63" width="0.1524" layer="91"/>
@@ -757,25 +757,9 @@
 </net>
 <net name="PWM" class="0">
 <segment>
-<pinref part="R1" gate="G$1" pin="1"/>
-<wire x1="130.81" y1="96.52" x2="130.81" y2="99.06" width="0.1524" layer="91"/>
-<junction x="130.81" y="99.06"/>
-<pinref part="C1" gate="G$1" pin="2"/>
-<wire x1="120.65" y1="99.06" x2="130.81" y2="99.06" width="0.1524" layer="91"/>
+<pinref part="R3" gate="G$1" pin="1"/>
+<wire x1="120.65" y1="99.06" x2="123.19" y2="99.06" width="0.1524" layer="91"/>
 <label x="120.65" y="99.06" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="FILTERED" class="0">
-<segment>
-<pinref part="R1" gate="G$1" pin="2"/>
-<pinref part="R2" gate="G$1" pin="2"/>
-<wire x1="138.43" y1="99.06" x2="138.43" y2="96.52" width="0.1524" layer="91"/>
-<pinref part="Q1" gate="G$1" pin="G"/>
-<junction x="138.43" y="99.06"/>
-<wire x1="138.43" y1="99.06" x2="142.24" y2="99.06" width="0.1524" layer="91"/>
-<wire x1="138.43" y1="99.06" x2="138.43" y2="109.22" width="0.1524" layer="91"/>
-<wire x1="138.43" y1="109.22" x2="120.65" y2="109.22" width="0.1524" layer="91"/>
-<label x="120.65" y="109.22" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="FLYBACK" class="1">
@@ -793,6 +777,23 @@
 <wire x1="120.65" y1="113.03" x2="147.32" y2="113.03" width="0.1524" layer="91"/>
 <junction x="147.32" y="113.03"/>
 <label x="120.65" y="113.03" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="FILTERED" class="0">
+<segment>
+<wire x1="130.81" y1="96.52" x2="130.81" y2="99.06" width="0.1524" layer="91"/>
+<junction x="130.81" y="99.06"/>
+<pinref part="C1" gate="G$1" pin="2"/>
+<pinref part="R3" gate="G$1" pin="2"/>
+<pinref part="R2" gate="G$1" pin="2"/>
+<wire x1="138.43" y1="99.06" x2="138.43" y2="96.52" width="0.1524" layer="91"/>
+<pinref part="Q1" gate="G$1" pin="G"/>
+<junction x="138.43" y="99.06"/>
+<wire x1="138.43" y1="99.06" x2="142.24" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="138.43" y1="99.06" x2="138.43" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="138.43" y1="109.22" x2="120.65" y2="109.22" width="0.1524" layer="91"/>
+<label x="120.65" y="109.22" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="130.81" y1="99.06" x2="138.43" y2="99.06" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
