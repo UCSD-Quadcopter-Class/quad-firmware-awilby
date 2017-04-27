@@ -674,7 +674,7 @@
 <parts>
 <part name="Q1" library="Seeed-Transistor-2016" deviceset="SMD-MOSFET-N-CH-20V-2.1A-CJ2302(SOT-23)" device="" value="CJ2302"/>
 <part name="R2" library="Seeed-Resistor-2016" deviceset="SMD-RES-10K-5%-1/10W(0603)" device="" value="10K 1/10W"/>
-<part name="C1" library="Seeed-Capacitor-2016" deviceset="CERAMIC-1UF-10V-10%-X5R(0402)" device="" value="1uf"/>
+<part name="C1" library="Seeed-Capacitor-2016" deviceset="CERAMIC-1UF-10V-10%-X5R(0402)" device="" value="0.1uf"/>
 <part name="C4" library="Seeed-Capacitor-2016" deviceset="TANTALUM-SMD-100UF-10V(AVX-B)" device="" value="100uf"/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
@@ -697,6 +697,7 @@
 <wire x1="162.56" y1="120.65" x2="151.13" y2="120.65" width="0.1524" layer="97" style="shortdash"/>
 <wire x1="151.13" y1="120.65" x2="151.13" y2="134.62" width="0.1524" layer="97" style="shortdash"/>
 <text x="152.4" y="118.11" size="1.778" layer="97">Flyback</text>
+<text x="100.33" y="78.74" size="1.778" layer="97">This schematic is for illustrative purposes, only.  Don't pay attention to the part numbers.</text>
 </plain>
 <instances>
 <instance part="Q1" gate="G$1" x="147.32" y="99.06"/>
